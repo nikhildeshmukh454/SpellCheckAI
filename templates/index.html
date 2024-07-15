@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpellCheckAI</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+
+  <h1  class="navbar" >  SpellCheckAI</h1>
+  
+
+  <div class="container ">
+    <!-- Form for typing text -->
+    <form action="/spell" method="post" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="text">Type your text here:</label>
+        <hr>
+        <textarea class="form-control" id="text" name="text" rows="5"></textarea>
+      </div>
+      <button type="submit" class="btn">Correct</button>
+    </form>
+
+    <!-- Display corrected text and mistakes found -->
+    {% if corrected_text and mistakes %}
+    <div class="mt-3">
+
+        <div  id="Original" class="output">
+              <h5>Original text:</h5>
+
+            <div class="Original-text">
+                <p >{{ Orignal }}</p>
+
+            </div>
+           
+        </div>
+      
+
+
+        <div id="corrected" class="output">
+            <h5  >Corrected Text:</h5>
+            <div class="highlighted-text">
+                <p  >{{ corrected_text }}</p>
+
+            </div>
+           
+
+        </div>
+       
+        <div id="mistakes" class="output">
+            <h5 >Mistakes Found:</h5>
+            <div class="Mistakes-text"> 
+                <p>{{ mistakes }}</p>
+            </div>
+           
+        </div>
+        
+    </div>
+    
+    {% endif %}
+  </div>
+
+</body>
+</html>
