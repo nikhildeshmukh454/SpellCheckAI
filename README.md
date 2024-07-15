@@ -15,8 +15,4 @@ This project implements a spell checker module using the TextBlob library to cor
 - TextBlob
 - Pickle
 
-## Installation
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/yourusername/spell-checker-module.git
